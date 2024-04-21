@@ -7,15 +7,35 @@
     <style>
         body {
             margin: 0;
+            overflow-x: hidden;
+            background-color: #3d3c3c;
+            padding-bottom: 100px;
+        }
+
+        #main {            
+            margin: 10px auto;
+            padding: 20px 20px;
+            max-width: 1440px;
+        }
+
+        #head {
+            width: 100%;
+            text-align: left;
+            padding-bottom: 10px;
+            border-bottom: solid 1px #6f6f6f;
+        }
+
+        .logo {
+            width: 150px;
+            height: auto;
         }
 
         #gallery {
             display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 5px;
-            padding: 20px 20px;
-            margin: 0 auto;
-            max-width: 1024px;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 5px;            
+            width: 100%;
+            margin-top: 15px;
         }
 
         .gallery-image-container {
@@ -27,8 +47,8 @@
             position: relative;
             border: solid 3px #A7A7A7;
             padding: 3px;
-            height: 147px;
-            width: 147px;
+            width: auto;
+            max-height: 147px;
         }
 
         .gallery-image {
@@ -132,6 +152,54 @@
             cursor: pointer;
         }
 
+        #footer {
+            position: fixed;
+            left: 0px;
+            bottom: 0px;
+            width: 100%;             
+            background-color: #000000;
+            color: #ffffff;                      
+        }
+
+        #footer-content {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 100%;
+            height: 65px;
+            max-width: 1480px;
+            margin: 0 auto;
+        }
+
+        #footer-content .logo {
+            width: 30%;
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        #footer-content .logo img {
+            width: 90px;
+        }
+
+        .copyright {
+            width: 70%;
+            text-align: right;
+            padding-right: 20px;
+        }
+
+        @media screen and (max-width: 1340px) {
+            #gallery {
+                grid-template-columns: repeat(7, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 1190px) {
+            #gallery {
+                grid-template-columns: repeat(6, 1fr);
+            }
+        }
+
         @media screen and (max-width: 1000px) {
             #gallery {
                 grid-template-columns: repeat(5, 1fr);
@@ -143,19 +211,20 @@
                 grid-template-columns: repeat(5, 1fr);
             }
             .gallery-image-container {
-                height: 139px;
-                width: 139px;
+                max-height: 139px;
             }
         }
-
 
         @media screen and (max-width: 768px) {
-            #gallery {
+            #main {
                 padding: 10px 5px;
+            }
+            #gallery {
+                grid-template-columns: repeat(4, 1fr);
             }
         }
 
-        @media screen and (max-width: 450px) {
+        @media screen and (max-width: 600px) {
             #gallery {
                 grid-template-columns: repeat(3, 1fr);
             }
@@ -163,81 +232,96 @@
     </style>
 </head>
 <body>
-    <div id="gallery">
-        <div class="gallery-image-container">
-            <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/1.jpg" alt="Image 1">
+    <div id="main">
+        <div id="head">
+            <img class="logo" src="./logo.png" alt="logo">
         </div>
-        <div class="gallery-image-container">
-            <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/2.jpg" alt="Image 2">
-        </div>
-        <div class="gallery-image-container">
-            <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/1.jpg" alt="Image 1">
-        </div>
-        <div class="gallery-image-container">
-            <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/3.jpg" alt="Image 3">
-        </div>
-        <div class="gallery-image-container">
-            <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/2.jpg" alt="Image 2">
-        </div>
-        <div class="gallery-image-container">
-            <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/1.jpg" alt="Image 1">
-        </div>
-        <div class="gallery-image-container">
-            <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/2.jpg" alt="Image 2">
-        </div>
-        <div class="gallery-image-container">
-            <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/3.jpg" alt="Image 3">
-        </div>
-        <div class="gallery-image-container">
-            <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/2.jpg" alt="Image 2">
-        </div>
-        <div class="gallery-image-container">
-            <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/1.jpg" alt="Image 1">
-        </div>
-        <div class="gallery-image-container">
-            <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/2.jpg" alt="Image 2">
-        </div>
-        <div class="gallery-image-container">
-            <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/3.jpg" alt="Image 3">
-        </div>
-        <div class="gallery-image-container">
-            <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/1.jpg" alt="Image 1">
-        </div>
-        <div class="gallery-image-container">
-            <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/2.jpg" alt="Image 2">
-        </div>
-        <div class="gallery-image-container">
-            <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/1.jpg" alt="Image 1">
-        </div>
-        <div class="gallery-image-container">
-            <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/3.jpg" alt="Image 3">
-        </div>
-        <div class="gallery-image-container">
-            <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/2.jpg" alt="Image 2">
-        </div>
-        <div class="gallery-image-container">
-            <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/1.jpg" alt="Image 1">
-        </div>
-        <div class="gallery-image-container">
-            <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/2.jpg" alt="Image 2">
-        </div>
-        <div class="gallery-image-container">
-            <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/3.jpg" alt="Image 3">
-        </div>
-        <div class="gallery-image-container">
-            <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/2.jpg" alt="Image 2">
-        </div>
-        <div class="gallery-image-container">
-            <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/1.jpg" alt="Image 1">
-        </div>
-        <div class="gallery-image-container">
-            <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/2.jpg" alt="Image 2">
-        </div>
-        <div class="gallery-image-container">
-            <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/3.jpg" alt="Image 3">
+        <div id="gallery">
+            <div class="gallery-image-container">
+                <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/1.jpg" alt="Image 1">
+            </div>
+            <div class="gallery-image-container">
+                <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/2.jpg" alt="Image 2">
+            </div>
+            <div class="gallery-image-container">
+                <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/1.jpg" alt="Image 1">
+            </div>
+            <div class="gallery-image-container">
+                <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/3.jpg" alt="Image 3">
+            </div>
+            <div class="gallery-image-container">
+                <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/2.jpg" alt="Image 2">
+            </div>
+            <div class="gallery-image-container">
+                <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/1.jpg" alt="Image 1">
+            </div>
+            <div class="gallery-image-container">
+                <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/2.jpg" alt="Image 2">
+            </div>
+            <div class="gallery-image-container">
+                <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/3.jpg" alt="Image 3">
+            </div>
+            <div class="gallery-image-container">
+                <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/2.jpg" alt="Image 2">
+            </div>
+            <div class="gallery-image-container">
+                <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/1.jpg" alt="Image 1">
+            </div>
+            <div class="gallery-image-container">
+                <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/2.jpg" alt="Image 2">
+            </div>
+            <div class="gallery-image-container">
+                <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/3.jpg" alt="Image 3">
+            </div>
+            <div class="gallery-image-container">
+                <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/1.jpg" alt="Image 1">
+            </div>
+            <div class="gallery-image-container">
+                <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/2.jpg" alt="Image 2">
+            </div>
+            <div class="gallery-image-container">
+                <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/1.jpg" alt="Image 1">
+            </div>
+            <div class="gallery-image-container">
+                <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/3.jpg" alt="Image 3">
+            </div>
+            <div class="gallery-image-container">
+                <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/2.jpg" alt="Image 2">
+            </div>
+            <div class="gallery-image-container">
+                <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/1.jpg" alt="Image 1">
+            </div>
+            <div class="gallery-image-container">
+                <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/2.jpg" alt="Image 2">
+            </div>
+            <div class="gallery-image-container">
+                <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/3.jpg" alt="Image 3">
+            </div>
+            <div class="gallery-image-container">
+                <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/2.jpg" alt="Image 2">
+            </div>
+            <div class="gallery-image-container">
+                <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/1.jpg" alt="Image 1">
+            </div>
+            <div class="gallery-image-container">
+                <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/2.jpg" alt="Image 2">
+            </div>
+            <div class="gallery-image-container">
+                <img class="gallery-image" src="https://kdzhambazov.github.io/demo-cocktail-image-gallery/3.jpg" alt="Image 3">
+            </div>
         </div>
     </div>
     <div class="pagination"></div>
+    <div id="footer">
+        <div id="footer-content">
+            <div class="logo">
+                <img src="./logo.png" alt="logo">
+            </div>
+            <div class="copyright">
+                <span>© 2024 Test Company Name. All rights reserved.</span>
+            </div>
+        </div>
+    </div>
     <div id="modal" class="modal">
         <div class="modal-actions">
             <a id="download">
